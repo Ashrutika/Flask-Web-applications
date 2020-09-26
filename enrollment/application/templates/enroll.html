@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+
+                    {% if not classes %}
+                    <div class="alert alert-warning">You are not enrolled in any of the courses !</div>
+                    {% else %}
+                    <h2>Term : {{ term }}</h2>
+                    <h3>You are enrolled in : </h3>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Course Id</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Credits</th>
+                                    <th scope="col">Term</th>
+                                </tr>
+                            </thead>
+                           <tbody>
+                               {% for data in classes %}
+                               <tr>
+                                   <td scope="row">{{ data.e2["course_id"] }}</td>
+                                   <td scope="row">{{ data.e2["title"] }}</td>
+                                   <td scope="row">{{ data.e2["description"] }}</td>
+                                   <td scope="row">{{ data.e2["credits"] }}</td>
+                                   <td scope="row">{{ data.e2["term"] }}</td>
+                               </tr>
+                               {% endfor %}
+                           </tbody>
+                        </table>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                   
+               
+                
+{% endblock %}

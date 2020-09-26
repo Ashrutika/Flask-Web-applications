@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}User{% endblock %}
+
+            {% block content %}
+            {% if users %}
+            <div class="row">
+                <div class="col-md-12 text-center">
+                {% for user in users %}
+                <dl>
+                    <dt>User ID : {{ user['user_id'] }}</dt>
+                    <dd>Name : {{ user['name'] }}</dd>
+                    <dd>Email : {{ user['email'] }}</dd>
+                </dl>
+                {% else %}
+                    <h1>No user added yet!</h1>
+                {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            {% endblock %}
+       

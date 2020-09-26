@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+{% block title%} {{ title }} {% endblock %}
+{% block content %}
+{% for data in data %}
+<div class="row">
+    <div class="col-sm-12">
+    <div class="card p-5 bg-light">
+        <h4>Title : {{ data.e1.title }}</h4>
+        <label>{{ data.e1.author_name }}</label>
+        <lable>{{ data.e1.date }}</lable>
+        <h2>{{ data.e1.headline }}</h2>
+        <div>{{ data.e1.description }}</div>        
+</div>
+</div>
+</div>
+<br>
+{% endfor %}
+{% endblock %}

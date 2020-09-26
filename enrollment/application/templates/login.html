@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<div class="alert alert-warning">Please login to enroll in the courses !</div>
+<form name="login" action="" method="post" >
+{{ form.hidden_tag() }}
+
+<p>
+    {{ form.email.label }} <br>
+    {{ form.email() }}
+    {% for error in form.email.errors %}
+          <span class="error-message text-danger">{{ error }}</span>
+        
+    {% endfor %}
+</p>
+
+<p>
+    {{ form.password.label }} <br>
+    {{ form.password() }}
+    {% for error in form.password.errors %}
+          <span class="error-message text-danger">{{ error }}</span>
+        
+    {% endfor %}
+</p>
+
+<p>
+    {{ form.remember_me() }}
+    {{ form.remember_me.label }}
+    <br><br>
+    {{ form.login(class="btn btn-primary") }}
+</p>
+
+</form>
+
+{% endblock %}

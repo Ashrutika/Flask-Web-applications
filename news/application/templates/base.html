@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+<title>{% block title %}{% endblock %}</title>
+<style>
+    .no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+</style>
+    </head>
+
+    <body>
+        {% block head%}
+        {% endblock %}
+        <br>
+        <div class="container">
+            <div class="row"><h1 class="col-sm-12">The Broadcast</h1></div>
+            <div class="row">
+                <div class="col-sm-12"> {% include "includes/nav.html" %}</div>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }} mt-3">
+                    <p>{{ message }}</p>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+            <div style="margin-top:2%;margin-bottom:2%;">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+           <div>
+                {% include "includes/footer.html" %}
+            </div>
+           
+       
+     </body>
+ </html>

@@ -1,0 +1,25 @@
+[{
+    "user_id":1,
+    "name":"shruti",
+    "email":"shruti@gmail.com",
+    "password":"shruti123"
+},
+{
+    "user_id":2,
+    "name":"aditya",
+    "email":"aditya@gmail.com",
+    "password":"adi123"
+},
+{
+    "user_id":3,
+    "name":"prajakta",
+    "email":"prajakta@gmail.com",
+    "password":"praju123"
+},
+{
+    "user_id":4,
+    "name":"arnav",
+    "email":"arnav@gmail.com",
+    "password":"aru123"
+}
+]

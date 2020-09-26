@@ -1,0 +1,12 @@
+[
+    {"course_id":"111","title":"Python","description":"Introduction to Python","credits":"4","term":"Spring"},
+    {"course_id":"222","title":"Javascript","description":"Introduction to Javascript","credits":"5","term":"Spring"},
+    {"course_id":"333","title":"Flask","description":"Introduction to Flask","credits":"4","term":"Fall"},
+    {"course_id":"444","title":"HTML5","description":"Introduction to HTML5","credits":"5","term":"Spring"},
+    {"course_id":"555","title":"CSS3/SCSS","description":"Introduction to CSS3","credits":"4","term":"Fall"},
+    {"course_id":"666","title":"MongoDB","description":"Introduction to MongoDB","credits":"5","term":"Fall"},
+    {"course_id":"777","title":"ReactJs","description":"Introduction to ReactJs","credits":"5","term":"Spring"},
+    {"course_id":"888","title":"AngularJs","description":"Introduction to AngularJs","credits":"4","term":"Spring"},
+    {"course_id":"999","title":"MySQL","description":"Introduction to MySQL","credits":"4","term":"Fall"}
+
+]

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Courses{% endblock %}
+
+<!-- <h2>Courses</h2>
+<h3>Term: {{ term }}</h3>
+{% if logs %}
+{% for log in logs %}
+<h1>User:{{ log }}</h1>
+<h2>name{{ name }}</h2>
+{% endfor%} -->
+
+{% block content %}
+<h2>Courses : </h2>
+<h3>Term : {{ term }}</h3>
+<div class="table-responsive">
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Course Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Credits</th>
+            <th scope="col">Term</th>
+            <th scope="col">Enroll</th>
+        </tr>
+    </thead>
+   <tbody>
+       {% for data in allcourses %}
+       <tr>
+           <td scope="row">{{ data["course_id"] }}</td>
+           <td scope="row">{{ data["title"] }}</td>
+           <td scope="row">{{ data["description"] }}</td>
+           <td scope="row">{{ data["credits"] }}</td>
+           <td scope="row">{{ data["term"] }}</td>
+           <td scope="row">
+               <form action="{{ url_for('enroll') }}" method="post">
+                <input type="hidden" name="id" value="{{ data['course_id'] }}">
+                <input type="hidden" name="title" value="{{ data['title'] }}">
+                <input type="hidden" name="term" value="{{ data['term'] }}">
+               <button class="btn btn-primary">Enroll</button>
+                </form>
+            </td>
+       </tr>
+       {% endfor %}
+   </tbody>
+</table>
+</div>
+{% endblock %}
+<!-- {% endif %} -->

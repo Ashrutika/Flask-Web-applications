@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+            {% block content %}
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Welcome to academy</h2>
+                {% if session['name'] %}
+                    <h3>Let's get started</h3>
+                    <h4>....Explore and learn....</h4>
+                {% else %}
+                    <h4>Already registered?<a href="{{ url_for('login') }}">Login</a></h4>
+                {% endif %}
+                </div>
+            </div>
+           
+            <div class="row mt-5 mb-5 align-center">
+                <div class="col-md-3 text-center">
+                  <div class="card">
+                    <img class="card-img-top" style="height:10rem;" src="../static/images/flask.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Flask</h5>
+                      <p class="card-text">Flask is a micro web framework written in Python. It is classified as a microframework. </p>
+                      <a href="https://flask.palletsprojects.com/en/1.1.x/" class="btn btn-primary">Open</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 text-center">
+                  <div class="card">
+                    <img class="card-img-top"  style="height:10rem;" src="../static/images/python.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Python</h5>
+                      <p class="card-text">Python is a high-level programming language designed to be easy to read and simple to implement.</p>
+                      <a href="https://docs.python.org/3/tutorial/index.html" class="btn btn-primary">Open</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 text-center">
+                  <div class="card">
+                    <img class="card-img-top" style="height:10rem;" src="../static/images/html.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">HTML</h5>
+                      <p class="card-text">Hypertext Markup Language is markup language for documents designed to be displayed in a web browser.</p>
+                      <a href="https://www.w3schools.com/TAGS/default.ASP" class="btn btn-primary">Open</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 text-center">
+                  <div class="card">
+                    <img class="card-img-top" style="height:10rem;" src="../static/images/mongo.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">MongoDB</h5>
+                      <p class="card-text">MongoDB is a document-oriented NoSQL database used for high volume data storage.</p>
+                      <a href="https://docs.mongodb.com/" class="btn btn-primary">Open</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+         
+
+            {% endblock %}
+       

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+<title>{% block title %}{% endblock %}</title>
+
+    <style>
+    input,select{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom:1px solid blue;
+        border-radius:3px;
+    }
+    </style>
+   
+    </head>
+
+    <body>
+        <div  class="jumbotron container-fluid text-center top-container">
+            <h1>TechStack Academy</h1>
+            {% if session['name'] %}
+            <div class="text-left">
+                Name : {{ session.get('name') }}
+            </div>
+            <div class="text-left">
+                Id : {{ session.get('user_id') }}
+            </div>
+            {%endif %}
+        </div>
+        <div class="container">
+            {% include "includes/nav.html" %}
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} mt-3">
+                        <p>{{ message }}</p>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div style="margin-top:2%;">
+            {% block content %}
+            {% endblock %}
+            </div>
+         
+
+        </div>
+        {% include "includes/footer.html" %}
+     </body>
+ </html>

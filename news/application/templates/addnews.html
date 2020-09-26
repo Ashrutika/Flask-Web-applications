@@ -1,0 +1,35 @@
+{% extends "base.html"%}
+{% block title%} {{ title }} {% endblock %}
+{% block content %}
+<form name="add" action="" method="post">
+    {{ form.hidden_tag() }}
+    
+    <p style="max-width: 200px;">
+        {{ form.title.label }} <br>
+        {{ form.title(class_="form-control") }}
+        {% for error in form.description.errors %}
+        <span class="error-message text-danger">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p style="max-width: 400px;min-width: 200px;">
+        {{ form.headline.label }} <br>
+        {{ form.headline(class_="form-control") }}
+        {% for error in form.headline.errors %}
+        <span class="error-message text-danger">{{ error }}</span>
+        {% endfor %}
+    </p>
+    
+    <p style="max-width: 400px;min-width: 200px;">
+        {{ form.description.label }} <br>
+        {{ form.description(class_="form-control") }}
+        {% for error in form.description.errors %}
+        <span class="error-message text-danger">{{ error }}</span>
+        {% endfor %}
+    </p>
+    
+    <p style="max-width: 200px;">
+       {{ form.add(class_="btn btn-primary btn-block") }}
+    </p>
+    
+    </form>
+{% endblock %}
